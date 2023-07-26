@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <script src="https://unpkg.com/htmx.org@1.9.4"></script>
   <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
 </head>
@@ -13,10 +14,26 @@
       <input type="text" name="username" placeholder="name">
       <input type="email" name="email" placeholder="email">
       <input type="tel" name="phone" placeholder="phone number">
-      <div class="flex">
-        <input class="border-none outline-none active:border-none active:outline-none hover:border-none hover:outline-none w-[80%]" type="password" name="password" placeholder="********">
-        <button type="">show</button>
-      </div>
+      <div class="border border-gray-600 focus:ring focus:ring-blue-300 flex w-[228px]">
+      <input type="password" id="password"
+    placeholder="Password"
+    class="w-[90%] border-none outline-none hover:border-none hover:outline-none active:border-none active:outline-none"
+  />
+  <button
+    id="togglePassword"
+    class="focus:outline-none"
+    data-hx-trigger="click"
+    data-hx-get="/togglePassword"
+  >
+    <i
+      id="eyeIcon"
+      class="fas fa-eye text-gray-600 hover:text-blue-500 cursor-pointer"
+      data-hx-target="#password"
+      data-hx-swap="innerHTML"
+      data-hx-get="/showIcon"
+    ></i>
+  </button>
+    </div> 
       <button class="ml-14 bg-black py-2 px-10 text-white ">sign up</button>
     </div>
   </div>
