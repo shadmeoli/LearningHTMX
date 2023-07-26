@@ -5,19 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <script src="https://unpkg.com/htmx.org@1.9.4"></script>
-  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+  <script src="https://cdn.tailwindcss.com?plugins=typography,aspect-ratio,line-clamp"></script>
 </head>
 <body>
   <div class="h-screen w-screen flex flex-col justify-center items-center space-y-4">
     <h1 class="text-4xl font-bold">Simple Form to explore the HTMX</h1>
     <div class="space-y-4 w-60">
-      <input type="text" name="username" placeholder="name">
-      <input type="email" name="email" placeholder="email">
-      <input type="tel" name="phone" placeholder="phone number">
+      <input class="p-2 border border-gray-600 text-gray-600 active:outline-none hover:outline-none " type="text" name="username" placeholder="name">
+      <input class="p-2 border border-gray-600 text-gray-600 active:outline-none hover:outline-none" type="email" name="email" placeholder="email">
+      <input class="p-2 border border-gray-600 text-gray-600 active:outline-none hover:outline-none"  type="tel" name="phone" placeholder="phone number">
+      
       <div class="border border-gray-600 focus:ring focus:ring-blue-300 flex w-[220px]">
       <input type="password" id="password"
     placeholder="Password"
-    class="w-[90%] border-none outline-none hover:border-none hover:outline-none active:border-none active:outline-none"
+    class="p-2 w-[90%] border-none outline-none hover:border-none hover:outline-none active:border-none active:outline-none"
   />
   <button
     id="togglePassword"
@@ -34,7 +35,7 @@
     ></i>
   </button>
     </div> 
-      <button class="ml-14 bg-black py-2 px-10 text-white ">sign up</button>
+      <button class="ml-14 bg-black py-2 px-10 text-white active:bg-gray-800 hover:bg-gray-700">sign up</button>
     </div>
   </div>
 </body>
