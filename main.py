@@ -6,4 +6,13 @@ from fastapi.exceptions import HTTPException
 
 app = FastAPI()
 
+templates = Jinja2Templates(directory="src/templates")
+
+
+@app.get('index/', response_class=HTMLResponse)
+async def home(request: Request):
+    packet = {
+        'request' : request
+    }
+    return templates.TemplateResponse('index.html', packet)
 
