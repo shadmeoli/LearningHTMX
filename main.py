@@ -3,14 +3,11 @@ from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse
 from fastapi.exceptions import HTTPException
 
-
 app = FastAPI()
+templates = Jinja2Templates(directory="src/template")
 
-templates = Jinja2Templates(directory="src/templates")
-
-
-@app.get('index/', response_class=HTMLResponse)
-async def home(request: Request):
+@app.get('/home', response_class=HTMLResponse)
+def home(request: Request):
     packet = {
         'request' : request
     }
